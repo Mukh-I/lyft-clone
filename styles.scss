@@ -37,6 +37,11 @@ body {
   font-weight: 400;
   font-size: 15px;
   color: rgb(12, 11, 49);
+  position: relative;
+}
+
+input[type="checkbox"] {
+  display: none;
 }
 
 .header {
@@ -349,7 +354,7 @@ body {
 // footer
 
 .footer {
-  padding: 16px 16px 0;
+  padding: 16px;
   @include md {
     background: linear-gradient(
       rgb(231, 231, 239) 0%,
@@ -402,9 +407,6 @@ body {
     }
   }
 
-  input[type="checkbox"] {
-    display: none;
-  }
   input[type="checkbox"]:checked ~ ul.footer__menu {
     display: flex;
     flex-direction: column;
@@ -506,5 +508,38 @@ body {
         margin-right: 0;
       }
     }
+  }
+}
+
+input[type="checkbox"]:checked + .mobile-nav {
+  transform: translateX(0);
+}
+
+.mobile-nav {
+  position: fixed;
+  display: block;
+  height: 100%;
+  overflow: auto;
+  width: 100%;
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+  background-color: #fff;
+  padding: 16px 20px 16px 16px;
+  z-index: 3;
+
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    label {
+      font-size: 25px;
+      cursor: pointer;
+    }
+  }
+
+  .footer__menu {
+    display: flex;
+    flex-direction: column;
   }
 }

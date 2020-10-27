@@ -35,7 +35,7 @@ $screen-xl-min: 1280px;
 body {
   font-family: sans-serif;
   font-weight: 400;
-  font-size: 17px;
+  font-size: 15px;
   color: rgb(12, 11, 49);
 }
 
@@ -177,6 +177,10 @@ body {
     text-transform: uppercase;
     color: inherit;
     font-weight: 600;
+    transition: color 0.5s ease;
+    &:hover {
+      color: #1242af;
+    }
   }
 
   &__menu {
@@ -314,11 +318,19 @@ body {
       margin: 0 auto;
     }
     span {
-      @include md {
+      @include sm {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        width: 75%;
+        justify-content: center;
+        width: 100%;
+        a {
+          font-size: 13px;
+        }
+      }
+      @include md {
+        a {
+          font-size: 14px;
+        }
       }
       @include lg {
         width: 100%;
@@ -361,8 +373,8 @@ body {
   }
 
   &__nav {
-    padding: 15px 16px 0 0;
-    padding-right: 16px;
+    padding: 15px 0;
+    margin-right: 16px;
     align-items: center;
     border-bottom: 1px solid rgba(12, 11, 49, 0.16);
     @include md {
@@ -372,13 +384,12 @@ body {
     }
   }
 
-  &__link {
-    display: inline-block;
+  &__btn {
+    display: block;
     width: 100%;
-    text-decoration: none;
     color: inherit;
     text-transform: uppercase;
-    padding: 15px 12px 15px 0;
+    padding: 15px 0 15px 0;
     h4 {
       display: flex;
       justify-content: space-between;
@@ -389,6 +400,18 @@ body {
         }
       }
     }
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="checkbox"]:checked ~ ul.footer__menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input[type="checkbox"]:checked + label h4 i.fas {
+    transform: rotate(180deg);
   }
 
   &__menu {
@@ -406,6 +429,7 @@ body {
 
   &__menu-item {
     display: block;
+    padding: 7px 0 7px;
   }
 
   &__menu-link {

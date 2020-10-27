@@ -8,7 +8,7 @@
 body {
   font-family: sans-serif;
   font-weight: 400;
-  font-size: 17px;
+  font-size: 15px;
   color: #0c0b31;
 }
 
@@ -224,6 +224,12 @@ body {
   text-transform: uppercase;
   color: inherit;
   font-weight: 600;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+}
+
+.nav__list-link:hover {
+  color: #1242af;
 }
 
 .nav__menu {
@@ -414,7 +420,7 @@ body {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 412px) {
   .links-panel .links-container span {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -423,10 +429,19 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    width: 75%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
+  .links-panel .links-container span a {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 768px) {
+  .links-panel .links-container span a {
+    font-size: 14px;
   }
 }
 
@@ -481,8 +496,8 @@ body {
 }
 
 .footer__nav {
-  padding: 15px 16px 0 0;
-  padding-right: 16px;
+  padding: 15px 0;
+  margin-right: 16px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -502,16 +517,15 @@ body {
   }
 }
 
-.footer__link {
-  display: inline-block;
+.footer__btn {
+  display: block;
   width: 100%;
-  text-decoration: none;
   color: inherit;
   text-transform: uppercase;
-  padding: 15px 12px 15px 0;
+  padding: 15px 0 15px 0;
 }
 
-.footer__link h4 {
+.footer__btn h4 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -522,9 +536,28 @@ body {
 }
 
 @media (min-width: 768px) {
-  .footer__link h4 i {
+  .footer__btn h4 i {
     display: none;
   }
+}
+
+.footer input[type="checkbox"] {
+  display: none;
+}
+
+.footer input[type="checkbox"]:checked ~ ul.footer__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer input[type="checkbox"]:checked + label h4 i.fas {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .footer__menu {
@@ -552,6 +585,7 @@ body {
 
 .footer__menu-item {
   display: block;
+  padding: 7px 0 7px;
 }
 
 .footer__menu-link {

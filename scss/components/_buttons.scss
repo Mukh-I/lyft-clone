@@ -1,0 +1,52 @@
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 100px;
+}
+
+.btn {
+  display: block;
+  border: none;
+  border-radius: 56px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  color: inherit;
+  transition: background-color 0.5s ease;
+
+  @include md {
+    font-size: 14px;
+  }
+
+  &:hover {
+    background-color: $color-darkblue-light;
+  }
+
+  &__signup {
+    background-color: $color-white;
+    color: inherit;
+    margin-bottom: 10px;
+    &:hover {
+      background-color: $color-darkblue-light;
+    }
+    &--blue {
+      background-color: $color-blue-primary;
+      color: $color-white;
+      display: none;
+      &:hover {
+        background-color: $color-blue-primary;
+      }
+    }
+  }
+  &__apply {
+    border: 1px solid $color-white;
+    color: $color-white;
+    margin-bottom: 30px;
+    &--outline {
+      display: none;
+      border: 1px solid $color-darkblue-primary;
+      color: $color-darkblue-primary;
+    }
+  }
+}

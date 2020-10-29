@@ -1,0 +1,25 @@
+.banner {
+  padding: 22px 18px;
+  background-color: #fff3b8;
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    i {
+      font-size: 20px;
+    }
+    @include md {
+      width: 83.3%;
+      margin: 0 auto;
+    }
+  }
+  &__text {
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-left: 11px;
+
+    a {
+      color: $color-blue-primary;
+    }
+  }
+}

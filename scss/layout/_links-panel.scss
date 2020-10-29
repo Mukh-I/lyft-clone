@@ -1,0 +1,38 @@
+.links-panel {
+  padding: 16px 0;
+  .links-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include lg {
+      width: 83.33%;
+      margin: 0 auto;
+    }
+    span {
+      @include sm {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: $w-100;
+        a {
+          font-size: 13px;
+        }
+      }
+      @include md {
+        a {
+          font-size: 14px;
+        }
+      }
+      @include lg {
+        width: $w-100;
+        align-items: center;
+        justify-content: space-evenly;
+        a {
+          display: inline-block;
+          margin: 0;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

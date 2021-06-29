@@ -1,6 +1,6 @@
 # lyft.com - clone
 
-## Built using:
+## Technologies used:
 - html5
 - scss
 
